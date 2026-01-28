@@ -1,0 +1,15 @@
+auth:
+  rootUser: minioadmin
+  rootPassword: "minioadmin123"
+
+defaultBuckets: "velero"
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+service:
+  type: ClusterIP
