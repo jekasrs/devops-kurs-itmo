@@ -13,32 +13,27 @@
 bash scripts/install-velero.sh
 ```
 
-2. настроить пароль репозитория (Encryption)
-```
-bash scripts/set-repo-password.sh
-```
-
-3. задеплоить демо-приложение с PVC
+2. задеплоить демо-приложение с PVC
 ```
 bash scripts/deploy-demo.sh
 ```
 
-4. сделать бэкап
+3. сделать бэкап
 ```
 bash scripts/backup.sh prod-manual-001
 ```
 
-5. симулировать потерю данных (удаление namespace)
+4. симулировать потерю данных (удаление namespace)
 ```
 bash scripts/simulate-loss.sh
 ```
 
-6. восстановить из бэкапа
+5. восстановить из бэкапа
 ```
 bash scripts/restore.sh prod-restore-001 prod-manual-001
 ```
 
-7. CronJob (по расписанию)
+6. CronJob (по расписанию)
 ```
 kubectl apply -f cronjobs/velero-cronjob-backup.yaml
 kubectl -n velero get cronjob,job
